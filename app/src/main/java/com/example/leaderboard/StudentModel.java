@@ -2,22 +2,20 @@ package com.example.leaderboard;
 
 import android.net.Uri;
 
-public class LearnersModel {
+public class StudentModel {
     private String name;
     private String hours;
     private String country;
     private String badgeUrl;
 
-    public LearnersModel() {
-    }
 
-    public LearnersModel(String name, String hours, String country, String photo) {
+    public StudentModel(String name, String hours, String country, String photo) {
         this.name = name;
         this.hours = hours;
         this.country = country;
         this.badgeUrl= photo;
     }
-
+    
     public String getName() {
         return name;
     }

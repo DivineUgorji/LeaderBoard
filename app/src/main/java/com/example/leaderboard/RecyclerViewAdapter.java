@@ -17,14 +17,14 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
-    private List<LearnersModel> mLearnersList;
+    private List<StudentModel> mLearnersList;
     private Context mContext;
     private LayoutInflater mLayoutInflater;
 
     public RecyclerViewAdapter() {
     }
 
-    public void SetData(List<LearnersModel> mLearnersList){
+    public void SetData(List<StudentModel> mLearnersList){
 
         this.mLearnersList = mLearnersList;
         notifyDataSetChanged();
@@ -43,7 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        LearnersModel learners = mLearnersList.get(position);
+        StudentModel learners = mLearnersList.get(position);
 
         Picasso.Builder builder = new Picasso.Builder(mContext);
         builder.downloader(new OkHttp3Downloader(mContext));

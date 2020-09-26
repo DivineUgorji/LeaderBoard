@@ -13,13 +13,5 @@ public class SubmitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit);
 
-        Toolbar mtoolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mtoolbar);
-
-        ActionBar ab = getSupportActionBar();
-
-        // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
-
     }
 }

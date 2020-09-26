@@ -8,5 +8,5 @@ import retrofit2.http.GET;
 public interface LearnersResponse {
 
     @GET("hours")
-    Call<List<LearnersModel>> learnersResponseList();
+    Call<List<StudentModel>> learnersResponseList();
 }

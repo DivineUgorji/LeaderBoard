@@ -1,6 +1,5 @@
 package com.example.leaderboard;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,7 +23,7 @@ public class LearningFragment extends Fragment {
 
     View view;
      RecyclerView myRecyclerView;
-     List<LearnersModel> mLearners;
+     List<StudentModel> mLearners;
      RecyclerViewAdapter mRecyclerViewAdapter;
      ProgressBar mProgressBar;
 
@@ -51,20 +50,20 @@ public class LearningFragment extends Fragment {
     }
 
     public void getAllRetrofitUsers(){
-        Call<List<LearnersModel>> learnersList = LearnersApiClient.getLearnersResponse().learnersResponseList();
-        learnersList.enqueue(new Callback<List<LearnersModel>>() {
+        Call<List<StudentModel>> learnersList = LearnersApiClient.getLearnersResponse().learnersResponseList();
+        learnersList.enqueue(new Callback<List<StudentModel>>() {
             @Override
-            public void onResponse(Call<List<LearnersModel>> call, Response<List<LearnersModel>> response) {
+            public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                 if (response.isSuccessful()){
                     mProgressBar.setVisibility(view.GONE);
-                    List<LearnersModel> learnersList1 = response.body();
+                    List<StudentModel> learnersList1 = response.body();
                     mRecyclerViewAdapter.SetData(learnersList1);
                     myRecyclerView.setAdapter(mRecyclerViewAdapter);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<LearnersModel>> call, Throwable t) {
+            public void onFailure(Call<List<StudentModel>> call, Throwable t) {
                 Log.e("failed", t.getLocalizedMessage());
 
             }
